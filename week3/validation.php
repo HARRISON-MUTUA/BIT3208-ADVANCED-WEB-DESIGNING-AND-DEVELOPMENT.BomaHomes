@@ -1,10 +1,19 @@
 <?php
 
+$name = $_POST['name'];
+
 $email = $_POST['email'];
+
 $password = $_POST['password'];
 
-echo "Email: " . $email;
+echo "Name: ".$name;
+
 echo "<br>";
-echo "Password: " . $password;
+
+echo "Email: ".$email;
+
+echo "<br>";
+
+echo "Password: ".$password;
 
 ?>

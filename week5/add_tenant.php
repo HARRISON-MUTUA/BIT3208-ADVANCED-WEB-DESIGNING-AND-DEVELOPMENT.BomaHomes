@@ -1,136 +1,56 @@
 <?php
+
 include 'database/connection.php';
 
-if(isset($_POST['save'])){
+if(isset($_POST['add'])){
 
-    $tenant_name = $_POST['tenant_name'];
+    $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
-    $house_number = $_POST['house_number'];
-    $rent_amount = $_POST['rent_amount'];
+    $house_no = $_POST['house_no'];
+    $rent = $_POST['rent'];
 
-    $sql = "INSERT INTO tenants(
-            tenant_name,
-            phone,
-            house_number,
-            rent_amount
-            )
+    $sql = "INSERT INTO tenants(fullname,phone,house_no,rent)
+            VALUES('$fullname','$phone','$house_no','$rent')";
 
-            VALUES(
-            '$tenant_name',
-            '$phone',
-            '$house_number',
-            '$rent_amount'
-            )";
+    mysqli_query($conn,$sql);
 
-    $result = mysqli_query($conn, $sql);
-
-    if($result){
-        echo "Tenant Added Successfully";
-    }else{
-        echo "Failed";
-    }
+    header("Location: view_tenants.php");
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Tenant</title>
-
-    <style>
-
-        
-
-body{
-    font-family: Arial;
-    background-color: lightgray;
-}
-
-.container{
-    width: 500px;
-    background-color: white;
-    margin: 60px auto;
-    padding: 30px;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-
-input{
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: 1px solid gray;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button{
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: darkgreen;
-}
-
-a{
-    text-decoration: none;
-    color: blue;
-}
-
-h2{
-    color: black;
-}
-
-</style>
+<title>Add Tenant</title>
 </head>
 <body>
-
-<div class="container">
 
 <h2>Add Tenant</h2>
 
 <form method="POST">
 
-<input type="text"
-name="tenant_name"
-placeholder="Tenant Name"
-required>
+<input type="text" name="fullname" placeholder="Full Name" required>
 
-<input type="text"
-name="phone"
-placeholder="Phone Number"
-required>
+<br><br>
 
-<input type="text"
-name="house_number"
-placeholder="House Number"
-required>
+<input type="text" name="phone" placeholder="Phone Number" required>
 
-<input type="text"
-name="rent_amount"
-placeholder="Rent Amount"
-required>
+<br><br>
 
-<button type="submit" name="save">
-Save Tenant
+<input type="text" name="house_no" placeholder="House Number" required>
+
+<br><br>
+
+<input type="number" name="rent" placeholder="Rent Amount" required>
+
+<br><br>
+
+<button type="submit" name="add">
+Add Tenant
 </button>
 
 </form>
-
-<br>
-
-<a href="dashboard.php">
-Back to Dashboard
-</a>
-
-</div>
 
 </body>
 </html>

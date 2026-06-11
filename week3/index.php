@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BomaHomes Form Validation</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/validation.js"></script>
-
+    <title>BomaHomes Week 3</title>
 </head>
 <body>
 
-<div class="container">
+<h1>BomaHomes Week 3</h1>
 
-<h2>BomaHomes Login Form</h2>
+<a href="form.php">
+Open Form Validation Demo
+</a>
 
-<form action="validation.php" method="POST" onsubmit="return validateForm()">
+<br><br>
 
-<input type="email" id="email" name="email" placeholder="Enter Email">
-
-<input type="password" id="password" name="password" placeholder="Enter Password">
-
-<button type="submit">Submit</button>
-
-</form>
-
-</div>
+<a href="database/connection.php">
+Test Database Connection
+</a>
 
 </body>
 </html>

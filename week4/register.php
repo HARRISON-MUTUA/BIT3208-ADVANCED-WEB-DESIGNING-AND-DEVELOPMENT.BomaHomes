@@ -1,4 +1,3 @@
-
 <?php
 include 'database/connection.php';
 
@@ -30,13 +29,122 @@ if(isset($_POST['register'])){
 <head>
     <title>BomaHomes Register</title>
 
-    <link rel="stylesheet" href="css/style.css">
-
     <style>
 
-        #strength{
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: Blue;
+        }
+
+       
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+        }
+
+        
+        .home-link{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .container{
+            background-color: Green;
+            min-height: 500px;
+            padding: 40px;
+        }
+
+        .container h2{
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle{
+            color: #444;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        .form-row{
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .form-group{
+            flex: 1;
+            min-width: 250px;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 8px;
             font-weight: bold;
-            margin-top: 5px;
+        }
+
+        input{
+            width: 100%;
+            padding: 15px;
+            border: 1px solid gray;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #strength{
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        button{
+            margin-top: 25px;
+            width: 140px;
+            padding: 12px;
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: whitesmoke;
+        }
+
+        .login-link{
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .login-link a{
+            color: black;
+        }
+
+        
+        .footer{
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-top: 1px solid lightgray;
+        }
+
+        @media(max-width: 900px){
+
+            .form-row{
+                flex-direction: column;
+            }
+
+            .container h2{
+                font-size: 36px;
+            }
+
         }
 
     </style>
@@ -44,44 +152,78 @@ if(isset($_POST['register'])){
 </head>
 <body>
 
+
+<!-- Main Content -->
 <div class="container">
 
-<h2>Landlord Registration</h2>
+    <h2>Landlord Registration</h2>
 
-<form method="POST">
+    <p class="subtitle">
+        Create an account to list and manage your properties.
+    </p>
 
-<input type="text"
-name="fullname"
-placeholder="Full Name"
-required>
+    <form method="POST">
 
-<input type="email"
-name="email"
-placeholder="Email"
-required>
+        <div class="form-row">
 
-<input type="password"
-id="password"
-name="password"
-placeholder="Password"
-required
-minlength="6"
-onkeyup="checkStrength()">
+            <div class="form-group">
 
-<p id="strength"></p>
+                <label>Full Name</label>
 
-<button type="submit" name="register">
-Register
-</button>
+                <input type="text"
+                       name="fullname"
+                       placeholder="Enter your full name"
+                       required>
 
-</form>
+            </div>
 
-<p>
-Already have an account?
-<a href="login.php">Login Here</a>
-</p>
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Enter your password"
+                       required
+                       minlength="6"
+                       onkeyup="checkStrength()">
+
+                <p id="strength"></p>
+
+            </div>
+
+        </div>
+
+        <button type="submit" name="register">
+            Register
+        </button>
+
+    </form>
+
+    <div class="login-link">
+
+        Already have an account?
+
+        <a href="login.php">
+            Login Here
+        </a>
+
+    </div>
 
 </div>
+
 
 <script>
 

@@ -25,11 +25,11 @@ if(isset($_POST['login'])){
             exit();
 
         }else{
-            echo "Wrong Password";
+            echo "<script>alert('Wrong Password');</script>";
         }
 
     }else{
-        echo "User Not Found";
+        echo "<script>alert('User Not Found');</script>";
     }
 }
 ?>
@@ -39,36 +39,126 @@ if(isset($_POST['login'])){
 <head>
     <title>BomaHomes Login</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: Blue;
+            margin: 0;
+        }
+
+        .container{
+            width: 85%;
+            min-height: 500px;
+            margin: 20px auto;
+            background-color: Green;
+            border: 1px solid gray;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        h2{
+            font-size: 48px;
+            margin-bottom: 50px;
+        }
+
+        .form-row{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        input{
+            width: 240px;
+            padding: 15px;
+            border: 1px solid gray;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button{
+            width: 120px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid gray;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: whitesmoke;
+        }
+
+        .register-link{
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        .register-link a{
+            color: black;
+        }
+
+        @media(max-width: 768px){
+
+            .form-row{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input{
+                width: 100%;
+            }
+
+            button{
+                width: 100%;
+            }
+
+            h2{
+                font-size: 36px;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 
 <div class="container">
 
-<h2>Landlord Login</h2>
+    <h2>Landlord Login</h2>
 
-<form method="POST">
+    <form method="POST">
 
-<input type="email"
-name="email"
-placeholder="Email"
-required>
+        <div class="form-row">
 
-<input type="password"
-name="password"
-placeholder="Password"
-required>
+            <input type="email"
+                   name="email"
+                   placeholder="Email"
+                   required>
 
-<button type="submit" name="login">
-Login
-</button>
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required>
 
-</form>
+            <button type="submit" name="login">
+                Login
+            </button>
 
-<p>
-Don't have an account?
-<a href="register.php">Register Here</a>
-</p>
+        </div>
+
+    </form>
+
+    <div class="register-link">
+
+        Don't have an account?
+
+        <a href="register.php">
+            Register Here
+        </a>
+
+    </div>
 
 </div>
 

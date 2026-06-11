@@ -17,12 +17,12 @@ if(!isset($_SESSION['user'])){
 
         body{
             font-family: Arial;
-            background: #f2f2f2;
+            background: Blue;
         }
 
         .dashboard{
             width: 400px;
-            background: white;
+            background: Green;
             margin: 80px auto;
             padding: 20px;
             border-radius: 5px;
