@@ -615,6 +615,7 @@ if ($role === 'super_admin') {
         <div class="nav-links">
             <a href="../week3/index.php"><i class="fas fa-home"></i> Home</a>
             <a href="../week4/contact.php" class="contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="../week8/students.php"><i class="fas fa-user-graduate"></i> Students</a>
             <a href="../week4/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
     </div>
